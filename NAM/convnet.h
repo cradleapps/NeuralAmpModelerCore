@@ -12,7 +12,7 @@
 #include "activations.h"
 #include "conv1d.h"
 #include "dsp.h"
-#include "nlohmann/json.hpp"
+#include "json.hpp"
 
 namespace nam
 {

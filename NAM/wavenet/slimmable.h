@@ -10,7 +10,7 @@
 #endif
 
 #include "../dsp.h"
-#include "nlohmann/json.hpp"
+#include "json.hpp"
 #include "../model_config.h"
 #include "../slimmable.h"
 #include "model.h"

@@ -5,7 +5,10 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include "nlohmann/json.hpp"
+
+#if !defined(NAM_NO_API_JSON_INCLUDE)
+  #include "json.hpp"
+#endif
 
 #include "dsp.h"
 

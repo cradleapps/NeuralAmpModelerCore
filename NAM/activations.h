@@ -13,7 +13,7 @@
 
 #include <Eigen/Dense>
 
-#include "nlohmann/json.hpp"
+#include "json.hpp"
 
 namespace nam
 {

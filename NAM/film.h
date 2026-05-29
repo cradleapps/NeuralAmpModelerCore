@@ -4,7 +4,7 @@
 #include <cassert>
 #include <vector>
 
-#include "dsp.h"
+#include "dsp_models.h"
 
 namespace nam
 {

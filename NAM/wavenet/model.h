@@ -10,7 +10,7 @@
 #include <Eigen/Dense>
 
 #include "../dsp.h"
-#include "json.hpp"
+#include "nlohmann/json.hpp"
 
 #include "detail.h"
 

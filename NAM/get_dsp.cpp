@@ -7,7 +7,7 @@
 
 #include "dsp.h"
 #include "registry.h"
-#include "json.hpp"
+#include "nlohmann/json.hpp"
 #include "get_dsp.h"
 #include "model_config.h"
 

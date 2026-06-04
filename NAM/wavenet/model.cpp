@@ -1238,3 +1238,9 @@ namespace
 {
 static nam::ConfigParserHelper _register_WaveNet("WaveNet", nam::wavenet::create_config);
 }
+
+#ifdef NAM_STATIC_LIB
+// Ensure this translation unit (and the model registration) doesn't get discarded during static link
+#include "force_link.h"
+FORCE_LINK_ANCHOR(model_WaveNet)
+#endif

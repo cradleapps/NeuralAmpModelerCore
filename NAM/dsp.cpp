@@ -811,3 +811,9 @@ void nam::Conv1x1::process_(const Eigen::Ref<const Eigen::MatrixXf>& input, cons
 #endif
   }
 }
+
+#ifdef NAM_STATIC_LIB
+// Ensure this translation unit (and the model registration) doesn't get discarded during static link
+#include "force_link.h"
+FORCE_LINK_ANCHOR(model_Linear)
+#endif

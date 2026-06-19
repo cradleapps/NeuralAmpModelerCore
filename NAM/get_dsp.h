@@ -72,10 +72,12 @@ void verify_config_version(const std::string versionStr);
 const std::string LATEST_FULLY_SUPPORTED_NAM_FILE_VERSION = "0.7.0";
 const std::string EARLIEST_SUPPORTED_NAM_FILE_VERSION = "0.5.0";
 
+#if defined(__cpp_lib_filesystem)
 /// \brief Get NAM from a .nam file at the provided location
 /// \param config_filename Path to the .nam model file
 /// \return Unique pointer to a DSP object
 std::unique_ptr<DSP> get_dsp(const std::filesystem::path config_filename);
+#endif
 
 /// \brief Data structure for a DSP object
 ///
@@ -96,6 +98,7 @@ struct dspData
 /// \return Unique pointer to a DSP object
 std::unique_ptr<DSP> get_dsp(dspData& conf);
 
+#if defined(__cpp_lib_filesystem)
 /// \brief Get NAM from a .nam file and store its configuration
 ///
 /// Creates an instance of DSP and also returns a dspData struct that holds the data of the model.
@@ -103,6 +106,7 @@ std::unique_ptr<DSP> get_dsp(dspData& conf);
 /// \param returnedConfig Output parameter that will be filled with the model data
 /// \return Unique pointer to a DSP object
 std::unique_ptr<DSP> get_dsp(const std::filesystem::path config_filename, dspData& returnedConfig);
+#endif
 
 /// \brief Get NAM from a provided configuration JSON object
 /// \param config JSON configuration object

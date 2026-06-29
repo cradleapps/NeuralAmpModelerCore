@@ -8,7 +8,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "dsp.h"
+#include "dsp_models.h"
 #define tanh_impl_ std::tanh
 // #define tanh_impl_ fast_tanh_
 

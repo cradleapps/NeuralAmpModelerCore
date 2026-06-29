@@ -11,7 +11,7 @@
 #include <vector>
 #include <functional>
 
-#include "dsp.h"
+#include "dsp_models.h"
 
 namespace nam
 {

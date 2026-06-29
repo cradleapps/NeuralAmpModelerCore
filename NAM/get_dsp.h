@@ -3,9 +3,14 @@
 #include <fstream>
 #include <memory>
 #include <optional>
+#include <string>
 #include <vector>
 
 #include "dsp.h"
+
+#if !defined(NAM_NO_API_JSON_INCLUDE)
+  #include "json.hpp"
+#endif
 
 namespace nam
 {
@@ -82,6 +87,20 @@ struct DspLoadOptions
 /// \param options Loading options
 /// \return Unique pointer to a DSP object
 std::unique_ptr<DSP> get_dsp(const std::filesystem::path config_filename, DspLoadOptions options = DspLoadOptions());
+
+/// \brief Data structure for a DSP object
+///
+/// Contains all information needed to instantiate and configure a DSP model.
+struct dspData
+{
+  std::string version; ///< Data version. Follows conventions established in trainer code.
+  std::string architecture; ///< High-level architecture. Supported: "ConvNet", "LSTM", "Linear", "WaveNet"
+  nlohmann::json config; ///< Model configuration JSON
+  nlohmann::json metadata; ///< Model metadata JSON
+  std::vector<float> weights; ///< Model weights
+  double expected_sample_rate; ///< Expected sample rate in Hz. Most NAM models implicitly assume data at some sample
+                               ///< rate. Use -1.0 for "I don't know".
+};
 
 /// \brief Get NAM from a provided configuration struct
 /// \param conf DSP data structure containing model configuration and weights

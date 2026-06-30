@@ -82,11 +82,13 @@ struct DspLoadOptions
   std::optional<bool> prewarm = std::nullopt;
 };
 
+#if defined(__cpp_lib_filesystem)
 /// \brief Get NAM from a .nam file at the provided location
 /// \param config_filename Path to the .nam model file
 /// \param options Loading options
 /// \return Unique pointer to a DSP object
 std::unique_ptr<DSP> get_dsp(const std::filesystem::path config_filename, DspLoadOptions options = DspLoadOptions());
+#endif
 
 /// \brief Data structure for a DSP object
 ///
@@ -108,6 +110,7 @@ struct dspData
 /// \return Unique pointer to a DSP object
 std::unique_ptr<DSP> get_dsp(dspData& conf, DspLoadOptions options = DspLoadOptions());
 
+#if defined(__cpp_lib_filesystem)
 /// \brief Get NAM from a .nam file and store its configuration
 ///
 /// Creates an instance of DSP and also returns a dspData struct that holds the data of the model.
@@ -117,6 +120,7 @@ std::unique_ptr<DSP> get_dsp(dspData& conf, DspLoadOptions options = DspLoadOpti
 /// \return Unique pointer to a DSP object
 std::unique_ptr<DSP> get_dsp(const std::filesystem::path config_filename, dspData& returnedConfig,
                              DspLoadOptions options = DspLoadOptions());
+#endif
 
 /// \brief Get NAM from a provided configuration JSON object
 /// \param config JSON configuration object

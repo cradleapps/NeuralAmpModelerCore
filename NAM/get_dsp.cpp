@@ -154,11 +154,13 @@ void populate_dsp_data(const nlohmann::json& config, dspData& returnedConfig)
   returnedConfig.expected_sample_rate = nam::get_sample_rate_from_nam_file(config);
 }
 
+#if defined(__cpp_lib_filesystem)
 std::unique_ptr<DSP> get_dsp(const std::filesystem::path config_filename, DspLoadOptions options)
 {
   dspData temp;
   return get_dsp(config_filename, temp, options);
 }
+#endif
 
 std::unique_ptr<DSP> get_dsp(const nlohmann::json& config, DspLoadOptions options)
 {
@@ -166,6 +168,7 @@ std::unique_ptr<DSP> get_dsp(const nlohmann::json& config, DspLoadOptions option
   return get_dsp(config, temp, options);
 }
 
+#if defined(__cpp_lib_filesystem)
 std::unique_ptr<DSP> get_dsp(const std::filesystem::path config_filename, dspData& returnedConfig,
                              DspLoadOptions options)
 {
@@ -184,6 +187,7 @@ std::unique_ptr<DSP> get_dsp(const std::filesystem::path config_filename, dspDat
 
   return get_dsp(conf, options);
 }
+#endif
 
 std::unique_ptr<DSP> get_dsp(const nlohmann::json& config, dspData& returnedConfig, DspLoadOptions options)
 {

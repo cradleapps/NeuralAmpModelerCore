@@ -1,7 +1,10 @@
 #include <algorithm> // std::max_element
 #include <algorithm>
 #include <cmath> // pow, tanh, expf
-#include <filesystem>
+#include <version>
+#if defined(__cpp_lib_filesystem)
+  #include <filesystem>
+#endif
 #include <fstream>
 #include <string>
 #include <unordered_map>

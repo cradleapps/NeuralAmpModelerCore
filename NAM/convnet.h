@@ -1,6 +1,9 @@
 #pragma once
 
-#include <filesystem>
+#include <version>
+#if defined(__cpp_lib_filesystem)
+  #include <filesystem>
+#endif
 #include <iterator>
 #include <memory>
 #include <string>

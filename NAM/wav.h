@@ -1,8 +1,12 @@
 #pragma once
 
-#include <filesystem>
+#include <version>
+#if defined(__cpp_lib_filesystem)
+  #include <filesystem>
+#endif
 #include <vector>
 
+#if defined(__cpp_lib_filesystem)
 namespace nam
 {
 namespace detail
@@ -12,3 +16,4 @@ namespace detail
 std::vector<float> load_wav_ir(const std::filesystem::path& filename, double& sample_rate, int& out_channels);
 } // namespace detail
 } // namespace nam
+#endif

@@ -1,6 +1,9 @@
 #pragma once
 
-#include <filesystem>
+#include <version>
+#if defined(__cpp_lib_filesystem)
+  #include <filesystem>
+#endif
 #include <stdexcept>
 
 #include "json.hpp"
@@ -14,9 +17,11 @@ public:
   using std::runtime_error::runtime_error;
 };
 
+#if defined(__cpp_lib_filesystem)
 /// \brief Parse and validate a .nam file
 /// \param filename Path to the .nam file
 /// \return The parsed model configuration
 /// \throws NamFileValidationError If the file cannot be read, parsed, or does not contain the minimum required fields
 nlohmann::json validate_nam_file(const std::filesystem::path& filename);
+#endif
 } // namespace nam

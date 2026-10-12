@@ -6,7 +6,7 @@
 #include <sstream>
 #include <stdexcept>
 
-#include "dsp.h"
+#include "dsp_models.h"
 #include "registry.h"
 #include "json.hpp"
 #include "get_dsp.h"

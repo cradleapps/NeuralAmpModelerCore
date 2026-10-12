@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <optional>
+#include <string>
 #include <vector>
 #include <version>
 
@@ -91,6 +92,20 @@ struct DspLoadOptions
 /// \throws NamFileValidationError If a .nam file cannot be read or does not contain a minimally valid configuration
 std::unique_ptr<DSP> get_dsp(const std::filesystem::path config_filename, DspLoadOptions options = DspLoadOptions());
 #endif
+
+/// \brief Data structure for a DSP object
+///
+/// Contains all information needed to instantiate and configure a DSP model.
+struct dspData
+{
+  std::string version; ///< Data version. Follows conventions established in trainer code.
+  std::string architecture; ///< High-level architecture, e.g. "ConvNet", "LSTM", "Linear", "WaveNet", "Sequential"
+  nlohmann::json config; ///< Model configuration JSON
+  nlohmann::json metadata; ///< Model metadata JSON
+  std::vector<float> weights; ///< Model weights
+  double expected_sample_rate; ///< Training sample rate in Hz (-1.0 if unknown). Models advertising
+                               ///< SupportsArbitrarySampleRate() may also run at other rates.
+};
 
 /// \brief Get NAM from a provided configuration struct
 /// \param conf DSP data structure containing model configuration and weights

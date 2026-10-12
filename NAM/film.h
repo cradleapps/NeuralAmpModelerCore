@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "compiler.h"
-#include "dsp.h"
+#include "dsp_models.h"
 
 namespace nam
 {

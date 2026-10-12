@@ -1,6 +1,6 @@
 // Tests for dsp
 
-#include "NAM/dsp.h"
+#include "NAM/dsp_models.h"
 #include <cassert>
 #include <stdexcept>
 #include <vector>

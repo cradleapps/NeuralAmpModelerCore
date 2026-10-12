@@ -5,6 +5,7 @@
 #include <sstream>
 #include <stdexcept>
 
+#include "dsp_models.h"
 #include "get_dsp.h"
 
 namespace

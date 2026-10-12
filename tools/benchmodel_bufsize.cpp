@@ -4,6 +4,7 @@
 #include <cstring>
 #include <filesystem>
 
+#include "NAM/activations.h"
 #include "NAM/dsp.h"
 #include "NAM/get_dsp.h"
 

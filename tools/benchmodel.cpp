@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 
+#include "NAM/activations.h"
 #include "NAM/dsp.h"
 #include "NAM/get_dsp.h"
 #include "NAM/slimmable.h"

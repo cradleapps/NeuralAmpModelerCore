@@ -13,7 +13,7 @@
 #include <vector>
 
 #include "NAM/activations.h"
-#include "NAM/dsp.h"
+#include "NAM/dsp_models.h"
 #include "NAM/film.h"
 #include "NAM/gating_activations.h"
 

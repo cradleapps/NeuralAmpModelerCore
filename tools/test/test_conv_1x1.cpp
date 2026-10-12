@@ -7,7 +7,7 @@
 #include <stdexcept>
 #include <vector>
 
-#include "NAM/dsp.h"
+#include "NAM/dsp_models.h"
 
 namespace test_conv_1x1
 {

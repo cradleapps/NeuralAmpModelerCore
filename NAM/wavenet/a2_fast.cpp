@@ -25,7 +25,7 @@
 
   #include <Eigen/Dense>
 
-  #include "../dsp.h"
+  #include "../dsp_models.h"
 
 namespace nam
 {

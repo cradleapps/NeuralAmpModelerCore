@@ -14,7 +14,7 @@
 
 #include "activations.h"
 #include "conv1d.h"
-#include "dsp.h"
+#include "dsp_models.h"
 #include "json.hpp"
 
 namespace nam

@@ -6,7 +6,9 @@
 #endif
 #include <stdexcept>
 
-#include "json.hpp"
+#if !defined(NAM_NO_API_JSON_INCLUDE)
+  #include "json.hpp"
+#endif
 
 namespace nam
 {

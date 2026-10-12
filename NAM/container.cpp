@@ -4,6 +4,7 @@
 #include <sstream>
 
 #include "container.h"
+#include "dsp_models.h"
 #include "get_dsp.h"
 #include "model_config.h"
 

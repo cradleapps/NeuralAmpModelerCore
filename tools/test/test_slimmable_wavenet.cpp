@@ -7,7 +7,7 @@
 
 #include "json.hpp"
 
-#include "NAM/dsp.h"
+#include "NAM/dsp_models.h"
 #include "NAM/get_dsp.h"
 #include "NAM/slimmable.h"
 
